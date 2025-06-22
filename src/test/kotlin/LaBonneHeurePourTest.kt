@@ -5,7 +5,7 @@ class LaBonneHeurePourTest {
 
     @Test
     fun `doit répondre l'apéro entre 18h et 20h`() {
-        val result = LaBonneHeurePour().demander()
+        val result = LaBonneHeurePour(HorlogeSysteme()).demander()
 
         // comment figer la date ?
 

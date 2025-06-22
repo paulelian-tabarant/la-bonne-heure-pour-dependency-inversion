@@ -1,14 +1,6 @@
-import java.time.LocalDateTime
-import java.time.ZoneId
-import java.time.ZonedDateTime
-
-class LaBonneHeurePour {
+class LaBonneHeurePour(private val horloge: Horloge) {
     fun demander(): String {
-        val instantUtc = LocalDateTime.now()
-        val timezoneParis = ZoneId.of("Europe/Paris")
-        val zonedTimeParis = ZonedDateTime.of(instantUtc, timezoneParis)
-
-        val heure = zonedTimeParis.hour
+        val heure = horloge.heureActuelleEnFrance()
 
         return when (heure) {
             in 5..9 -> "les croissants"
